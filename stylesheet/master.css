@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+
+@layer base{
+       body{
+              font-family:Roboto;
+       }
+       @font-face {
+              font-family:Roboto ;
+              src: url(../fonts/Roboto-VariableFont_wdth\,wght.ttf);
+       }
+}
+
+
+@layer utilities{
+       .row{
+              @apply flex flex-wrap w-full
+       }
+}
+
+
+@theme {
+  --color-background: #1a1a2e;
+  --color-header-subtitle: #9c9cb8;
+  --color-nav-border-inactive: rgba(255, 255, 255, 0.15);
+  --color-nav-border-hover: rgba(255, 255, 255, 0.35);
+  --color-footer-divider: rgba(255, 255, 255, 0.1);
+  --color-footer-credit: #6e6e8e;
+  --color-footer-link: #9c9cb8;
+
+  --color-nav-active-bg: #7f77dd;
+  --color-nav-active-text: #ffffff;
+  --color-nav-inactive-text: #c9c9d8;
+
+  --color-stage-bg: #ffffff;
+
+  --color-player-one-chip-bg: #eeedfe;
+  --color-player-one-label: #534ab7;
+  --color-player-one-score: #26215c;
+
+  --color-player-two-chip-bg: #faece7;
+  --color-player-two-label: #993c1d;
+  --color-player-two-score: #4a1b0c;
+
+  --color-word-scramble-bg: #e1f5ee;
+  --color-word-scramble-text: #085041;
+  --color-word-scramble-border: #0b6b58;
+}
