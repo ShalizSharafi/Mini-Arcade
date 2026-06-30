@@ -21,22 +21,22 @@
 @layer components{
        .navItem{
               @apply w-full flex justify-center items-center sm:w-fit px-2 py-1 border border-nav-border-inactive
-              rounded-[10px] duration-500 hover:border-nav-border-hover cursor-pointer hover:bg-nav-active-bg text-nav-inactive-text hover:text-nav-active-text capitalize
+              rounded-[10px] duration-500 hover:border-nav-border-hover cursor-pointer hover:bg-nav-active-bg text-nav-inactive-text hover:text-nav-active-text capitalize gap-2.5
        }
      
 
        .numberGuesserBox{
-              @apply w-full  flex-wrap sm:w-fit p-5 bg-white 
+              @apply w-full  flex-wrap sm:w-fit p-8 bg-white 
               rounded-[10px] hidden duration-500  justify-center
        }
 
         .diceRollerBox{
-              @apply w-full flex flex-wrap sm:w-fit p-5 bg-white 
+              @apply w-full flex flex-wrap sm:w-fit p-8 bg-white 
               rounded-[10px] duration-500
        }
 
         .wordScrambleBox{
-              @apply w-full flex flex-wrap sm:w-fit p-5 bg-white 
+              @apply w-full flex flex-wrap sm:w-fit p-8 bg-white 
               rounded-[10px] duration-500
        }
       .buttonStyle{

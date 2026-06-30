@@ -13,6 +13,8 @@
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
     --font-weight-bold: 700;
     --animate-bounce: bounce 1s infinite;
     --default-font-family: var(--font-sans);
@@ -189,6 +191,14 @@
   .hidden {
     display: none;
   }
+  .size-5 {
+    width: calc(var(--spacing) * 5);
+    height: calc(var(--spacing) * 5);
+  }
+  .size-6 {
+    width: calc(var(--spacing) * 6);
+    height: calc(var(--spacing) * 6);
+  }
   .w-full {
     width: 100%;
   }
@@ -213,6 +223,10 @@
   .rounded-\[10px\] {
     border-radius: 10px;
   }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
   .border-none {
     --tw-border-style: none;
     border-style: none;
@@ -235,6 +249,10 @@
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -281,6 +299,12 @@
       width: calc(1 / 4 * 100%);
     }
   }
+  .sm\:text-3xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
   .md\:text-xl {
     @media (width >= 48rem) {
       font-size: var(--text-xl);
@@ -321,6 +345,7 @@
     cursor: pointer;
     align-items: center;
     justify-content: center;
+    gap: calc(var(--spacing) * 2.5);
     border-radius: 10px;
     border-style: var(--tw-border-style);
     border-width: 1px;
@@ -357,7 +382,7 @@
     justify-content: center;
     border-radius: 10px;
     background-color: var(--color-white);
-    padding: calc(var(--spacing) * 5);
+    padding: calc(var(--spacing) * 8);
     --tw-duration: 500ms;
     transition-duration: 500ms;
     @media (width >= 40rem) {
@@ -370,7 +395,7 @@
     flex-wrap: wrap;
     border-radius: 10px;
     background-color: var(--color-white);
-    padding: calc(var(--spacing) * 5);
+    padding: calc(var(--spacing) * 8);
     --tw-duration: 500ms;
     transition-duration: 500ms;
     @media (width >= 40rem) {
@@ -383,7 +408,7 @@
     flex-wrap: wrap;
     border-radius: 10px;
     background-color: var(--color-white);
-    padding: calc(var(--spacing) * 5);
+    padding: calc(var(--spacing) * 8);
     --tw-duration: 500ms;
     transition-duration: 500ms;
     @media (width >= 40rem) {
@@ -433,14 +458,14 @@
     }
   }
 }
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-duration {
   syntax: "*";
@@ -474,8 +499,8 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-font-weight: initial;
       --tw-border-style: solid;
+      --tw-font-weight: initial;
       --tw-duration: initial;
       --tw-scale-x: 1;
       --tw-scale-y: 1;
