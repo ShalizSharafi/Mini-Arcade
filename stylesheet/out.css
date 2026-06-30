@@ -9,9 +9,12 @@
       "Courier New", monospace;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --text-xl: 1.25rem;
+    --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-bold: 700;
+    --animate-bounce: bounce 1s infinite;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-background: #1a1a2e;
@@ -21,6 +24,8 @@
     --color-nav-active-bg: #7f77dd;
     --color-nav-active-text: #ffffff;
     --color-nav-inactive-text: #c9c9d8;
+    --color-player-one-chip-bg: #eeedfe;
+    --color-player-one-label: #534ab7;
   }
 }
 @layer base {
@@ -178,30 +183,54 @@
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
-  .mt-20 {
-    margin-top: calc(var(--spacing) * 20);
+  .flex {
+    display: flex;
+  }
+  .hidden {
+    display: none;
   }
   .w-full {
     width: 100%;
   }
+  .grow {
+    flex-grow: 1;
+  }
+  .animate-bounce {
+    animation: var(--animate-bounce);
+  }
+  .items-center {
+    align-items: center;
+  }
   .justify-center {
     justify-content: center;
+  }
+  .justify-start {
+    justify-content: flex-start;
   }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
   }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
+  .rounded-\[10px\] {
+    border-radius: 10px;
   }
-  .border-white {
-    border-color: var(--color-white);
+  .border-none {
+    --tw-border-style: none;
+    border-style: none;
   }
   .bg-background {
     background-color: var(--color-background);
   }
+  .bg-nav-active-bg {
+    background-color: var(--color-nav-active-bg);
+  }
   .p-5 {
     padding: calc(var(--spacing) * 5);
+  }
+  .px-2\.5 {
+    padding-inline: calc(var(--spacing) * 2.5);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
   }
   .text-2xl {
     font-size: var(--text-2xl);
@@ -211,6 +240,9 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .text-background {
+    color: var(--color-background);
+  }
   .text-header-subtitle {
     color: var(--color-header-subtitle);
   }
@@ -219,6 +251,10 @@
   }
   .capitalize {
     text-transform: capitalize;
+  }
+  .outline-none {
+    --tw-outline-style: none;
+    outline-style: none;
   }
   .\*\:w-full {
     :is(& > *) {
@@ -235,9 +271,20 @@
       color: var(--color-nav-active-text);
     }
   }
-  .lg\:mt-10 {
-    @media (width >= 64rem) {
-      margin-top: calc(var(--spacing) * 10);
+  .sm\:mt-5 {
+    @media (width >= 40rem) {
+      margin-top: calc(var(--spacing) * 5);
+    }
+  }
+  .sm\:w-1\/4 {
+    @media (width >= 40rem) {
+      width: calc(1 / 4 * 100%);
+    }
+  }
+  .md\:text-xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
   .lg\:justify-start {
@@ -299,30 +346,140 @@
         color: var(--color-nav-active-text);
       }
     }
-    @media (width >= 64rem) {
+    @media (width >= 40rem) {
       width: fit-content;
     }
   }
+  .numberGuesserBox {
+    display: none;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--color-white);
+    padding: calc(var(--spacing) * 5);
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
+    @media (width >= 40rem) {
+      width: fit-content;
+    }
+  }
+  .diceRollerBox {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    background-color: var(--color-white);
+    padding: calc(var(--spacing) * 5);
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
+    @media (width >= 40rem) {
+      width: fit-content;
+    }
+  }
+  .wordScrambleBox {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    background-color: var(--color-white);
+    padding: calc(var(--spacing) * 5);
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
+    @media (width >= 40rem) {
+      width: fit-content;
+    }
+  }
+  .buttonStyle {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    --tw-border-style: none;
+    border-style: none;
+    background-color: var(--color-player-one-chip-bg);
+    padding: calc(var(--spacing) * 2);
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-player-one-label);
+    text-transform: capitalize;
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
+    &:hover {
+      @media (hover: hover) {
+        --tw-scale-x: 90%;
+        --tw-scale-y: 90%;
+        --tw-scale-z: 90%;
+        scale: var(--tw-scale-x) var(--tw-scale-y);
+      }
+    }
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-nav-active-bg);
+      }
+    }
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+    @media (width >= 40rem) {
+      width: calc(1 / 4 * 100%);
+    }
+  }
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
   initial-value: solid;
 }
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
-}
 @property --tw-duration {
   syntax: "*";
   inherits: false;
 }
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
       --tw-font-weight: initial;
+      --tw-border-style: solid;
       --tw-duration: initial;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
     }
   }
 }

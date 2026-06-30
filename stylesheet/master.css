@@ -20,9 +20,28 @@
 
 @layer components{
        .navItem{
-              @apply w-full flex justify-center items-center lg:w-fit px-2 py-1 border border-nav-border-inactive
+              @apply w-full flex justify-center items-center sm:w-fit px-2 py-1 border border-nav-border-inactive
               rounded-[10px] duration-500 hover:border-nav-border-hover cursor-pointer hover:bg-nav-active-bg text-nav-inactive-text hover:text-nav-active-text capitalize
        }
+     
+
+       .numberGuesserBox{
+              @apply w-full  flex-wrap sm:w-fit p-5 bg-white 
+              rounded-[10px] hidden duration-500  justify-center
+       }
+
+        .diceRollerBox{
+              @apply w-full flex flex-wrap sm:w-fit p-5 bg-white 
+              rounded-[10px] duration-500
+       }
+
+        .wordScrambleBox{
+              @apply w-full flex flex-wrap sm:w-fit p-5 bg-white 
+              rounded-[10px] duration-500
+       }
+      .buttonStyle{
+       @apply w-full sm:w-1/4 grow p-2 text-player-one-label bg-player-one-chip-bg flex items-center justify-center rounded-[10px] text-xl font-bold border-none duration-500 hover:scale-90 cursor-pointer hover:bg-nav-active-bg hover:text-white capitalize
+      }
 }
 
 @theme {
