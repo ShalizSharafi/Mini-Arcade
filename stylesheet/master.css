@@ -20,7 +20,7 @@
 
 @layer components{
        .navItem{
-              @apply w-full flex justify-center items-center sm:w-fit px-2 py-1 border border-nav-border-inactive
+              @apply w-full flex justify-center items-center sm:w-fit px-2 py-1.5 border border-nav-border-inactive
               rounded-[10px] duration-500 hover:border-nav-border-hover cursor-pointer hover:bg-nav-active-bg text-nav-inactive-text hover:text-nav-active-text capitalize gap-2.5
               hover:scale-90
        }
@@ -32,16 +32,24 @@
        }
 
         .diceRollerBox{
-              @apply w-full flex flex-wrap sm:w-fit p-8 bg-white 
+              @apply w-full  flex-wrap sm:w-fit p-8 bg-white hidden
               rounded-[10px] duration-500
        }
 
+       .dice{
+              @apply  w-15 h-15 relative  transform-3d  duration-1000 
+              hover:transform-[rotate3d(1,1,1,360deg)] 
+       }
+
+       .diceSpans{
+              @apply  w-full h-full absolute flex items-center justify-center rounded-[5px] bg-white border-2 border-background/45
+       }
         .wordScrambleBox{
               @apply w-full flex flex-wrap sm:w-fit p-8 bg-white 
-              rounded-[10px] duration-500
+              rounded-[10px] duration-500 
        }
       .buttonStyle{
-       @apply w-full sm:w-1/4 grow p-2 text-player-one-label bg-player-one-chip-bg flex items-center justify-center rounded-[10px] text-xl font-bold border-none duration-500 hover:scale-90 cursor-pointer hover:bg-nav-active-bg hover:text-white capitalize
+       @apply w-full sm:w-1/3 grow p-2 text-player-one-label bg-player-one-chip-bg flex items-center justify-center rounded-[10px] text-xl font-bold border-none duration-500 hover:scale-90 cursor-pointer hover:bg-nav-active-bg hover:text-white capitalize flex-wrap
       }
 }
 

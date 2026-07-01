@@ -1,14 +1,20 @@
 //number guessing selected queries
 const navItem = document.querySelectorAll('.navItem')
 const numberGuesserBox = document.querySelector('.numberGuesserBox')
-const gameBox = document.querySelectorAll('.gamebox')
+const gameBox = document.querySelectorAll('.gameBox')
 const inp = document.getElementById('inp')
 const playBtn = document.querySelector('.play')
 const againBtn = document.querySelector('.again')
 const h3 = document.querySelector('.numberGuesserBox>h3')
 
 //dice rolling selected queries///
+const diceRollerBox = document.querySelector('.diceRollerBox')
 
+
+
+//dice rolling selected queries///
+// wordScrambleBox selected queries
+const wordScrambleBox = document.querySelector('.wordScrambleBox')
 
 //clicking on the menu items and displaying the game chosen//
 
@@ -33,6 +39,7 @@ gameBox.forEach((val)=>{
 ///number guesser game /////////////////////////******************************************************************************************************************************************
 //clicking on the menu items and displaying the game chosen//
 navItem[0].addEventListener('click',()=>{
+      
        let temp = numberGuesserBox.getAttribute('data-status')
        if(temp == 'off'){
               numberGuesserBox.setAttribute('data-status','on')
@@ -107,3 +114,17 @@ againBtn.addEventListener('click',()=>{
 
 ///dice roller game ///////////////game******************************************************************************************************************************************
 
+
+// ///////////clicking on the navitem to disaply the rolling dice box
+navItem[1].addEventListener('click',()=>{
+       let temp = diceRollerBox.getAttribute('data-status')
+       if(temp == 'off'){
+              diceRollerBox.setAttribute('data-status','on')
+              diceRollerBox.style.display='flex'
+       }else{
+              diceRollerBox.setAttribute('data-status','off')
+              diceRollerBox.style.display='none'
+       }
+})
+
+// ///////////clicking on the navitem to disaply the rolling dice box

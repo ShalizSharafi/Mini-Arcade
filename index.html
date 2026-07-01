@@ -22,7 +22,7 @@
                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" stroke-width="2"  class="size-5"><path d="M5 5L5 19H19V5H5ZM3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5ZM12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z"></path></svg>
                            dice roller </li>
                             <li class="navItem">
-                                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="white" stroke-width="2"  class="size-5"><path d="M6.19983 14H8.3539L9.55389 11H14.4458L15.6458 14H17.7998L12.9998 2H10.9998L6.19983 14ZM11.9998 4.88517 13.6458 9H10.3539L11.9998 4.88517ZM3 16V22L5 22 4.99992 20H18.9999L19 22 21 22 20.9999 16H18.9999V18H4.99992L5 16 3 16Z"></path></svg>
+                                   
                                    word scramble</li>
                      </ul>
               </nav>
@@ -35,7 +35,7 @@
              <!-- create an account -->
        </div>
        <!-- //arcade -->
-       <div class="arcade row mt-10 justify-center items-center text-white">
+       <div class="arcade row mt-8 justify-center items-center text-white">
               <!-- //number gusser game -->
               <div class="numberGuesserBox gameBox gap-5" data-status="off">
                       <h3 class="w-full flex items-center justify-center text-background font-bold capitalize md:text-xl  animate-bounce">choose a number between 0 to 100 and hit the play  button.</h3>
@@ -46,7 +46,41 @@
                <!-- //number gusser game -->
 
 
-               <!-- <div class="numberGeusser gameBox"></div> -->
+               <div class="diceRollerBox gameBox" data-status="off">
+                     <div class="row justify-center items-center">
+                            <h3 class="w-full flex items-center justify-center text-background font-bold capitalize md:text-xl  animate-bounce gap-1.5"> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1a2e" stroke-width="2"  class="size-6"><path d="M5 5L5 19H19V5H5ZM3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5ZM12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z"></path></svg>
+                                   Roll the dice to play</h3>
+                              <p class=" text-header-subtitle  mt-2.5 capitalize">first to 50 wins</p>
+                     </div>
+                     <div class="row mt-7.5 gap-10 justify-center">
+                            <div class="dice cursor-pointer">
+                                   <span class="diceSpans bg-player-one-chip-bg translate-z-7.5 text-background text-xl font-bold">1</span>
+                                   <span class="diceSpans bg-player-one-chip-bg -translate-z-7.5 text-background text-xl font-bold">2</span>
+                                   <span class="diceSpans bg-player-one-chip-bg  origin-right translate-z-7.5 text-background text-xl font-bold -rotate-y-90">3</span>
+                                   <span class="diceSpans bg-player-one-chip-bg origin-left -translate-z-7.5 text-background text-xl font-bold -rotate-y-90">4</span>
+                                   <span class="diceSpans bg-player-one-chip-bg origin-top translate-z-7.5 text-background text-xl font-bold -rotate-x-90">5</span>
+                                   <span class="diceSpans bg-player-one-chip-bg origin-bottom -translate-z-7.5 text-background text-xl font-bold -rotate-x-90">6</span>
+                            </div>
+                            <div class="row gap-5">
+                                   <button class="buttonStyle rollButtons bg-player-one-chip-bg">
+                                          <span class="text-xl w-full flex items-center justify-center font-normal text-player-one-label">player 1</span>
+                                          <span class="text-sm font-bold text-player-one-score">score</span>
+                                   </button>
+                                   <button class="buttonStyle rollButtons bg-player-two-chip-bg!">
+                                          <span class="text-xl w-full flex items-center justify-center  font-normal text-player-two-label!">player 2</span>
+                                          <span class="text-sm font-bold text-player-two-score">score</span>
+                                   </button>
+                                     <button class="buttonStyle holdButtons bg-background">
+                                          <span class="text-xl w-full flex items-center justify-center font-bold text-player-one-label">hold</span>
+                                   </button>
+                                   <button class="buttonStyle holdButtons bg-background!">
+                                          <span class="text-xl w-full flex items-center justify-center  font-bold text-player-two-label!">hold</span>
+                                   </button>
+                            </div>
+                     </div>
+                     <div class="row"></div>
+               </div>
                <!-- <div class="numberGeusser gameBox"></div> -->
        </div>
   </section>
