@@ -7,10 +7,10 @@
        <link rel="stylesheet" href="stylesheet/out.css">
 </head>
 <body>
-       <header class="row p-5 lg:p-10  bg-background  *:text-start *:w-full ">
+       <header class="row p-5 lg:p-10  bg-background  *:text-start *:w-full relative ">
               <h2 class="text-white font-bold  capitalize text-2xl sm:text-3xl  ">mini arcade</h2>
               <p class=" text-header-subtitle  mt-2.5 ">pick a gam efrom the menu to play</p>
-              <nav class="w-full mt-10 sm:mt-5">
+              <nav class="w-full mt-10 sm:mt-5 z-10">
                      <ul class="row justify-start lg:justify-start *:text-nav-active-text gap-5">
                             <li class="navItem"> 
                                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" stroke-width="2" stroke="#1a1a2e" class="size-5">
@@ -26,6 +26,9 @@
                                    word scramble</li>
                      </ul>
               </nav>
+              <div class="absolute top-0 right-0 w-1/2 h-full">
+                     <img src="images/svg (2).png" alt="" class="w-full h-full object-cover">
+              </div>
        </header>
   <section class="row bg-background p-5 lg:p-10 ">
        <div class="w-full  hidden">

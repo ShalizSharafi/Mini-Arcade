@@ -1,4 +1,4 @@
-//
+//number guessing selected queries
 const navItem = document.querySelectorAll('.navItem')
 const numberGuesserBox = document.querySelector('.numberGuesserBox')
 const gameBox = document.querySelectorAll('.gamebox')
@@ -6,6 +6,10 @@ const inp = document.getElementById('inp')
 const playBtn = document.querySelector('.play')
 const againBtn = document.querySelector('.again')
 const h3 = document.querySelector('.numberGuesserBox>h3')
+
+//dice rolling selected queries///
+
+
 //clicking on the menu items and displaying the game chosen//
 
 //reset //
@@ -39,7 +43,7 @@ navItem[0].addEventListener('click',()=>{
        }
 })
 
-const randNum = parseInt(Math.random()*100)
+let randNum = parseInt(Math.random()*100)
 console.log(randNum)
 inp.setAttribute('disabled','disabled')
 
@@ -48,6 +52,10 @@ let userGuess = 0
 playBtn.addEventListener('click',()=>{
        inp.removeAttribute('disabled')
        h3.style.animationPlayState='paused'
+       numberGame()
+       
+})
+function numberGame(){
        h3.innerText = 'guess remained: ' + Math.abs((flag-5))
        if(inp.value != ''){
               inp.style.border='none'
@@ -67,7 +75,7 @@ playBtn.addEventListener('click',()=>{
                      }
                      flag++
               }else{
-                     h3.innerText = 'You reached the number of guesses, yopu lost the game within 7 try(s)'
+                     h3.innerText = 'You reached the number of guesses, yopu lost the game within 5 try(s)'
                      inp.setAttribute('inert','inert')
                      playBtn.style.backgroundColor ='#993c1d'
                      playBtn.style.color= 'whitesmoke'
@@ -75,15 +83,27 @@ playBtn.addEventListener('click',()=>{
                      playBtn.innerText = 'You lost'
               }
        }else{
-              h3.innerText = 'empty input is NOT allowed'
+              h3.innerText = 'fill in the blank with your guesses'
               inp.style.border='3px solid #993c1d'
        }
-})
+}
+
 //try again
 againBtn.addEventListener('click',()=>{
-       
+       randNum = parseInt(Math.random()*100)
+       h3.innerText = 'fill in the blank with your guesses'
+       inp.value = ''
+       inp.removeAttribute('inert')
+       flag = 0
+        playBtn.style.backgroundColor ='#534ab7'
+                     playBtn.style.color= 'whitesmoke'
+                     playBtn.removeAttribute('disabled')
+                     playBtn.innerText = 'play'
 })
 //try again
 
 
 ///number guesser ///////////////game******************************************************************************************************************************************
+
+///dice roller game ///////////////game******************************************************************************************************************************************
+
