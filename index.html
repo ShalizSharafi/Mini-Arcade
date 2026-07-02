@@ -9,7 +9,7 @@
 <body>
        <header class="row p-5 lg:p-10  bg-background  *:text-start *:w-full relative ">
               <h2 class="text-white font-bold  capitalize text-2xl sm:text-3xl  ">mini arcade</h2>
-              <p class=" text-header-subtitle  mt-2.5 ">pick a gam efrom the menu to play</p>
+              <p class=" text-header-subtitle  mt-2.5 ">Pick a game from the menu to play</p>
               <nav class="w-full mt-10 sm:mt-5 z-10">
                      <ul class="row justify-start lg:justify-start *:text-nav-active-text gap-5">
                             <li class="navItem"> 
@@ -24,6 +24,7 @@
                             <li class="navItem">
                                    
                                    word scramble</li>
+                                   <li class="navItem">Tic Tac Toe</li>
                      </ul>
               </nav>
               <div class="absolute top-0 right-0 w-1/2 h-full">
@@ -35,7 +36,7 @@
              <!-- create an account -->
        </div>
        <!-- //arcade -->
-       <div class="arcade row mt-8 justify-center items-center text-white">
+       <div class="arcade row mt-2.5 justify-center items-center text-white">
               <!-- //number gusser game -->
               <div class="numberGuesserBox gameBox gap-5" data-status="off">
                       <h3 class="w-full flex items-center justify-center text-background font-bold capitalize md:text-xl  animate-bounce">choose a number between 0 to 100 and hit the play  button.</h3>
@@ -48,7 +49,7 @@
 
                <div class="diceRollerBox gameBox" data-status="off">
                      <div class="row justify-center items-center">
-                            <h3 class="w-full flex items-center justify-center text-background font-bold capitalize md:text-xl  animate-bounce gap-1.5"> 
+                            <h3 class="w-full flex items-center justify-center text-background font-bold capitalize md:text-xl  animate-bounce gap-1.5 "> 
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1a2e" stroke-width="2"  class="size-6"><path d="M5 5L5 19H19V5H5ZM3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5ZM12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z"></path></svg>
                                    Roll the dice to play</h3>
                               <p class=" text-header-subtitle  mt-2.5 capitalize">first to 50 wins</p>
@@ -63,23 +64,22 @@
                                    <span class="diceSpans bg-player-one-chip-bg origin-bottom -translate-z-7.5 text-background text-xl font-bold -rotate-x-90">6</span>
                             </div>
                             <div class="row gap-5">
-                                   <button class="buttonStyle rollButtons bg-player-one-chip-bg">
+                                   <button  class="buttonStyle rollButtons bg-player-one-chip-bg">
                                           <span class="text-xl w-full flex items-center justify-center font-normal text-player-one-label">player 1</span>
-                                          <span class="text-sm font-bold text-player-one-score">score</span>
+                                          <span class="text-sm font-bold text-player-one-score ">score</span>
                                    </button>
-                                   <button class="buttonStyle rollButtons bg-player-two-chip-bg!">
+                                   <button  class="buttonStyle rollButtons bg-player-two-chip-bg!">
                                           <span class="text-xl w-full flex items-center justify-center  font-normal text-player-two-label!">player 2</span>
-                                          <span class="text-sm font-bold text-player-two-score">score</span>
+                                          <span class="text-sm font-bold text-player-two-score score">score</span>
                                    </button>
-                                     <button class="buttonStyle holdButtons bg-background">
+                                     <button  class="buttonStyle holdButtons bg-background">
                                           <span class="text-xl w-full flex items-center justify-center font-bold text-player-one-label">hold</span>
                                    </button>
-                                   <button class="buttonStyle holdButtons bg-background!">
+                                   <button  class="buttonStyle holdButtons bg-background!">
                                           <span class="text-xl w-full flex items-center justify-center  font-bold text-player-two-label!">hold</span>
                                    </button>
                             </div>
                      </div>
-                     <div class="row"></div>
                </div>
                <!-- <div class="numberGeusser gameBox"></div> -->
        </div>

@@ -9,9 +9,11 @@ const h3 = document.querySelector('.numberGuesserBox>h3')
 
 //dice rolling selected queries///
 const diceRollerBox = document.querySelector('.diceRollerBox')
-
-
-
+const diceSpans = document.querySelectorAll('.diceSpans')
+const rollButtons= document.querySelectorAll('.rollButtons')
+const holdButtons= document.querySelectorAll('.holdButtons')
+const diceH3 = document.querySelector('.diceRollerBox>div>h3')
+const dice = document.querySelector('.dice')
 //dice rolling selected queries///
 // wordScrambleBox selected queries
 const wordScrambleBox = document.querySelector('.wordScrambleBox')
@@ -21,20 +23,28 @@ const wordScrambleBox = document.querySelector('.wordScrambleBox')
 //reset //
 navItem.forEach((val,i)=>{
        val.addEventListener('click',()=>{
+              gameBox.forEach((val)=>{
+             val.style.display='none'
+           })
               navItem.forEach((item, index)=>{
                      if(index != i){
                             item.setAttribute('data-status','off')
-                             }
+                     }
               })
               val.setAttribute('data-status','on')
        })
 })
-gameBox.forEach((val)=>{
-       val.style.display='none'
-})
+// gameBox.forEach((val)=>{
+//        val.style.display='none'
+// })
 
 //reset //
 
+///random number function
+function rand(i){
+             return Number(Math.floor(Math.random()*i))
+      }
+///random number function
 
 ///number guesser game /////////////////////////******************************************************************************************************************************************
 //clicking on the menu items and displaying the game chosen//
@@ -50,7 +60,7 @@ navItem[0].addEventListener('click',()=>{
        }
 })
 
-let randNum = parseInt(Math.random()*100)
+let randNum = rand(100)
 console.log(randNum)
 inp.setAttribute('disabled','disabled')
 
@@ -71,7 +81,7 @@ function numberGame(){
                      if(userGuess < randNum){
                             h3.innerText = 'the number is greater than your guess, you have ' + (Math.abs(5-flag)) + ' guess left'
                      }else if(userGuess > randNum){
-                            h3.innerText = 'the number is lesser than your guess, you have ' + (Math.abs(5-flag)) + 'guess left'
+                            h3.innerText = 'the number is lesser than your guess, you have ' + (Math.abs(5-flag)) + ' guess left'
                      }else{
                             h3.innerText = 'You won the game within  ' + (flag+1) +' try(s)! congratulations!!'
                             h3.style.color ='rgb(129,166,95)'
@@ -82,7 +92,7 @@ function numberGame(){
                      }
                      flag++
               }else{
-                     h3.innerText = 'You reached the number of guesses, yopu lost the game within 5 try(s)'
+                     h3.innerText = 'You reached the number of guesses, you lost the game within 5 try(s)'
                      inp.setAttribute('inert','inert')
                      playBtn.style.backgroundColor ='#993c1d'
                      playBtn.style.color= 'whitesmoke'
@@ -97,8 +107,10 @@ function numberGame(){
 
 //try again
 againBtn.addEventListener('click',()=>{
-       randNum = parseInt(Math.random()*100)
+       randNum = rand(100)
+       console.log(randNum)
        h3.innerText = 'fill in the blank with your guesses'
+       h3.style.color='#1a1a2e'
        inp.value = ''
        inp.removeAttribute('inert')
        flag = 0
@@ -117,6 +129,7 @@ againBtn.addEventListener('click',()=>{
 
 // ///////////clicking on the navitem to disaply the rolling dice box
 navItem[1].addEventListener('click',()=>{
+       
        let temp = diceRollerBox.getAttribute('data-status')
        if(temp == 'off'){
               diceRollerBox.setAttribute('data-status','on')
@@ -126,5 +139,103 @@ navItem[1].addEventListener('click',()=>{
               diceRollerBox.style.display='none'
        }
 })
+
+let player1 =0 
+let player2 =0
+
+let turn = rand(2)
+console.log(turn)
+
+if(turn){
+       rollButtons[0].setAttribute('disabled','disabled')
+       diceH3.innerText = 'Player2 may roll the dice'
+}else{
+       rollButtons[1].setAttribute('disabled','disabled')
+       diceH3.innerText = 'Player1 may roll the dice'
+}
+
+
+rollButtons.forEach((val)=>{
+       val.addEventListener('click',()=>{
+              if(val == rollButtons[0]){
+                     dice.classList.add('diceRolling')
+                     setTimeout(() => {
+                            let diceNum = rand(6)+1
+                            dice.classList.remove('diceRolling')
+                            console.log(diceNum)
+                            if(diceNum == 1){
+                                   player1 += 0
+                                   rollButtons[1].removeAttribute('disabled','disabled')
+                                   rollButtons[0].setAttribute('disabled','disabled')
+                                   diceH3.innerText = 'Player2 may roll the dice'
+                            }else if(diceNum == 6){
+                                   player1 += 12
+                                   rollButtons[0].removeAttribute('disabled','disabled')
+                                   rollButtons[1].setAttribute('disabled','disabled')
+                                   diceH3.innerText = 'Player1 may roll the dice'
+                            }else{
+                                   rollButtons[1].removeAttribute('disabled','disabled')
+                                   rollButtons[0].setAttribute('disabled','disabled') 
+                                   diceH3.innerText = 'Player2 may roll the dice'
+                            }
+                            if(diceNum != 1 && diceNum != 6){
+                                   player1 += diceNum
+                            }
+                            diceSpans[0].innerText = diceNum
+                            rollButtons[0].children[1].innerText = player1
+
+
+                            if(player1 >= 50){
+                                   diceH3.style.animationPlayState='paused'
+                                   diceH3.innerText = 'player1 won the game'
+                                   diceH3.style.color='rgb(129,166,95)'
+                                   rollButtons.forEach((val)=>{
+                                          val.setAttribute('inert','inert')
+                                   })
+                            }
+                     }, 1500);
+              }else{
+                     dice.classList.add('diceRolling')
+                      setTimeout(() => {
+                             let diceNum = rand(6)+1
+                             dice.classList.remove('diceRolling')
+                             console.log(diceNum)
+                             if(diceNum == 1){
+                                    player2 += 0
+                                    rollButtons[0].removeAttribute('disabled','disabled')
+                                    rollButtons[1].setAttribute('disabled','disabled')
+                                    diceH3.innerText = 'Player1 may roll the dice'
+                                   }else if(diceNum == 6){
+                                          player2 += 12
+                                          rollButtons[1].removeAttribute('disabled','disabled')
+                                          rollButtons[0].setAttribute('disabled','disabled')
+                                          diceH3.innerText = 'Player2 may roll the dice'
+                                   }else{
+                                          rollButtons[0].removeAttribute('disabled','disabled')
+                                          rollButtons[1].setAttribute('disabled','disabled') 
+                                          diceH3.innerText = 'Player1 may roll the dice'
+                                   }
+                                   if(diceNum != 1 && diceNum != 6){
+                                          player2 += diceNum
+                                   }
+                                   diceSpans[0].innerText = diceNum
+                                  rollButtons[1].children[1].innerText = player2
+                                   
+                                  if(player2 >= 50){
+                                   diceH3.style.animationPlayState='paused'
+                                   diceH3.innerText = 'player2 won the game'
+                                   diceH3.style.color='rgb(129,166,95)'
+                                   rollButtons.forEach((val)=>{
+                                          val.setAttribute('inert','inert')
+                                   })
+                            }
+                    
+                    
+                    
+                            }, 1500);
+              }
+       })
+})
+
 
 // ///////////clicking on the navitem to disaply the rolling dice box
