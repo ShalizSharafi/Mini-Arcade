@@ -131,6 +131,8 @@ navItem[1].addEventListener('click',()=>{
               diceRollerBox.style.display='flex'
 })
 
+// ///////////clicking on the navitem to disaply the rolling dice box
+
 let player1 =0 
 let player2 =0
 
@@ -267,4 +269,18 @@ holdButtons.forEach((val)=>{
        })
 })
 
-// ///////////clicking on the navitem to disaply the rolling dice box
+
+
+///dice roller game ///////////////game******************************************************************************************************************************************
+
+///word scramble game ///////////////game******************************************************************************************************************************************
+
+// //////////////////click on the navitem to display the word scramble box
+
+navItem[2].addEventListener('click',()=>{
+       wordScrambleBox.style.display='flex'
+})
+
+
+
+///word scamble game ///////////////game******************************************************************************************************************************************
