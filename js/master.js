@@ -17,7 +17,10 @@ const dice = document.querySelector('.dice')
 //dice rolling selected queries///
 // wordScrambleBox selected queries
 const wordScrambleBox = document.querySelector('.wordScrambleBox')
-
+const lettersRow = document.querySelector('.lettersRow')
+const h3Word = document.querySelector('.wordScrambleBox>div>h3')
+const guess = document.querySelector('.guess')
+const wordInp = document.getElementById('wordInp')
 //clicking on the menu items and displaying the game chosen//
 
 //reset //
@@ -281,6 +284,57 @@ navItem[2].addEventListener('click',()=>{
        wordScrambleBox.style.display='flex'
 })
 
+const words = ['pizza','pasta','cake','burger','tacco','burrito','pancake','sausage','cheese','butter']
 
+///random word from the words array//
+let randWord = words[rand(words.length)]
+console.log(randWord)
+///random word from the words array//
+
+//convert the randomword into an array of letters//
+let letterArray = Array.from(randWord)
+console.log(letterArray)
+//convert the randomword into an array of letters//
+// creating a scramble word from the randomword, to do that we need to first find a random index from the letterarray and to prevent the repetition we have to empty the letter array and push the letters into scrambled array///
+
+let randIndex = 0
+let scrambledArray = []
+let wordArray = letterArray.length
+for(let i =0 ; i<wordArray ;i++){
+       randIndex = rand(letterArray.length)
+       scrambledArray.push(letterArray[randIndex])
+       letterArray.splice(randIndex,1)
+}
+
+blankGenerator()
+function blankGenerator (){
+       for(let i = 0 ; i< scrambledArray.length ; i++){
+              let letter = document.createElement('span')
+              letter.classList.add('letter')
+              letter.innerText = scrambledArray[i]
+              lettersRow.appendChild(letter)
+       }
+}
+
+let userguess =''
+let guessCount = 0
+guess.addEventListener('click',()=>{
+        h3Word.style.animationPlayState='paused'
+        userguess = wordInp.value
+       if(guessCount < 4){
+              if(userguess == '') return 
+              if(userguess == randWord){
+                     h3Word.innerText = 'You won the game within ' + (guessCount+1) + ' try(s)'
+                     h3Word.style.color='#82A65F'
+              }else{
+                     h3Word.innerText = 'wrong! try again, you have ' + Math.abs(5-guessCount) + ' try(s)'
+              }
+              guessCount ++
+       }else{
+              h3Word.innerText = 'you are no longer able to guess. you ran out of your guesses!'
+              guess.setAttribute('inert','inert')
+       }
+       console.log(guessCount)
+})
 
 ///word scamble game ///////////////game******************************************************************************************************************************************
