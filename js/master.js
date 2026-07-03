@@ -21,9 +21,14 @@ const lettersRow = document.querySelector('.lettersRow')
 const h3Word = document.querySelector('.wordScrambleBox>div>h3')
 const guess = document.querySelector('.guess')
 const wordInp = document.getElementById('wordInp')
+const newWord = document.querySelector('.newWord')
 //clicking on the menu items and displaying the game chosen//
+const banner = document.querySelector('.banner')
+//
+console.log(banner.children[0].children[3].children[0].innerText)
 
 //reset //
+banner.children[0].children[3].children[0].innerText="no game's being selected yet"
 navItem.forEach((val,i)=>{
        val.addEventListener('click',()=>{
               gameBox.forEach((val)=>{
@@ -38,9 +43,11 @@ navItem.forEach((val,i)=>{
               if(val.getAttribute('data-status') == 'off'){
                      val.setAttribute('data-status','on')
                      val.classList.add('itemBg')
+                     banner.children[0].children[3].children[0].innerText=val.innerText
               }else{
                      val.setAttribute('data-status','off')
                      val.classList.remove('itemBg')
+                     
               }
        })
 })
@@ -318,7 +325,7 @@ function blankGenerator (){
 
 let userguess =''
 let guessCount = 0
-guess.addEventListener('click',()=>{
+function winner(){
         h3Word.style.animationPlayState='paused'
         userguess = wordInp.value
        if(guessCount < 4){
@@ -335,6 +342,10 @@ guess.addEventListener('click',()=>{
               guess.setAttribute('inert','inert')
        }
        console.log(guessCount)
+}
+
+guess.addEventListener('click',()=>{
+       winner()
 })
 
 ///word scamble game ///////////////game******************************************************************************************************************************************
