@@ -348,4 +348,26 @@ guess.addEventListener('click',()=>{
        winner()
 })
 
+
+newWord.addEventListener('click',()=>{
+       h3Word.innerText = 'try to guess the new word'
+       h3Word.style.color ='#1a1a2e'
+       wordInp.value = ''
+       randWord = words[rand(words.length)]
+       guessCount = 0
+       letterArray = Array.from(randWord)
+       wordArray = letterArray.length
+       scrambledArray=[]
+       lettersRow.innerHTML = ''
+       guess.removeAttribute('disabled')
+       guess.removeAttribute('inert')
+       for(let i = 0; i<wordArray ; i++){
+              randIndex = rand(letterArray.length)
+              scrambledArray.push(letterArray[randIndex])
+              letterArray.splice(randIndex, 1)
+       }
+       blankGenerator()
+       console.log(randWord)
+       console.log(scrambledArray)
+})
 ///word scamble game ///////////////game******************************************************************************************************************************************
