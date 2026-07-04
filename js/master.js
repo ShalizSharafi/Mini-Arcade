@@ -23,9 +23,9 @@ const guess = document.querySelector('.guess')
 const wordInp = document.getElementById('wordInp')
 const newWord = document.querySelector('.newWord')
 //clicking on the menu items and displaying the game chosen//
+//banner
 const banner = document.querySelector('.banner')
-//
-console.log(banner.children[0].children[3].children[0].innerText)
+//banner
 
 //reset //
 banner.children[0].children[3].children[0].innerText="no game's being selected yet"

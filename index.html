@@ -8,7 +8,7 @@
 </head>
 <body>
        <header class="row p-5 lg:p-10  bg-background  *:text-start *:w-full relative ">
-              <h2 class="text-white font-bold  capitalize text-2xl sm:text-3xl  ">mini arcade</h2>
+              <h2 class="text-white font-bold  capitalize text-2xl sm:text-4xl  ">mini arcade</h2>
               <p class=" text-header-subtitle  mt-2.5 ">Pick a game from the menu to play</p>
               <nav class="w-full mt-10 sm:mt-5 z-10">
                      <ul class="row justify-start lg:justify-start *:text-nav-active-text gap-5">
@@ -57,7 +57,7 @@
        </header>
 
        <!-- now playing banner -->
-       <div class="banner w-full bg-background py-1.5 px-5 lg:px-10">
+       <div class="banner w-full bg-background pt-1.5 pb-2.5 px-5 lg:px-10">
               <div class="row justify-start items-center gap-2.5">
                      <span class=" w-2 h-2 rounded-full bg-nav-active-bg  flex items-center justify-center animate-ping"></span>
                      <span class="w-fit  flex items-center justify-center text-nav-inactive-text ">Now Playing</span>
@@ -149,9 +149,47 @@
                </div> -->
        </div>
   </section>
-  <section class="cards">
-       
+  <section class="w-full bg-background py-10 px-5 lg:px-10 ">
+       <div class="row">
+              <div class="cards *:border *:border-red">
+                     <div class="row gap-2.5 bg-white p-5 rounded-[10px]">
+                            <figure class="w-12.5 h-12.5 flex items-center justify-center  bg-nav-active-bg/50 rounded-[10px]">
+                                   <img src="images/Number.png" alt="" class="w-1/2 h-1/2 object-cover">
+                            </figure>
+                            <h3 class="w-full flex justify-start items-center text-xl font-bold text-background">Number Guesser</h3>
+                            <h4 class="font-normal  text-background/75 w-full justify-start flex items-center">Guess the number in 5 tries</h4>
+                     </div>
+              </div>
+              <div class="cards *:border *:border-red">
+                     <div class="row gap-2.5 bg-white p-5 rounded-[10px]">
+                            <figure class="w-12.5 h-12.5 flex items-center justify-center  bg-nav-active-bg/50 rounded-[10px]"><img src="images/dice-line.png" alt="" class="w-1/2 h-1/2 object-cover"></figure>
+                            <h3 class="w-full flex justify-start items-center text-xl font-bold text-background">Dice Roller</h3>
+                            <h4 class="font-normal  text-background/75 w-full justify-start flex items-center">First to score 25 wins</h4>
+                     </div>
+              </div>
+              <div class="cards *:border *:border-red">
+                     <div class="row gap-2.5 bg-white p-5 rounded-[10px]">
+                            <figure class="w-12.5 h-12.5 flex items-center justify-center  bg-nav-active-bg/50 rounded-[10px]">
+                                   <img src="images/puzzle-line.png" alt="" class="w-1/2 h-1/2 object-cover">
+                            </figure>
+                            <h3 class="w-full flex justify-start items-center text-xl font-bold text-background">Word Unscramble</h3>
+                            <h4 class="font-normal  text-background/75 w-full justify-start flex items-center">Unscramble the word in 4 tires</h4>
+                     </div>
+              </div>
+              <div class="cards *:border *:border-red">
+                     <div class="row gap-2.5 bg-white p-5 rounded-[10px]">
+                            <figure class="w-12.5 h-12.5 flex items-center justify-center  bg-nav-active-bg/50 rounded-[10px]">
+                                   <img src="images/grid-fill.png" alt="" class="w-1/2 h-1/2 object-cover">
+                            </figure>
+                            <h3 class="w-full flex justify-start items-center text-xl font-bold text-background">Tic Tac Toe</h3>
+                            <h4 class="font-normal  text-background/75 w-full justify-start flex items-center">First to fill 3 consecutive squares win</h4>
+                     </div>
+              </div>
+       </div>
   </section>
+  <footer class="w-full bg-background py-10 px-5 lg:px-10 border-nav-border-inactive border-t">
+
+  </footer>
 </body>
 <script src="js/master.js"></script>
 </html>
