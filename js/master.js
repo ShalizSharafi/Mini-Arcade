@@ -26,6 +26,14 @@ const newWord = document.querySelector('.newWord')
 //banner
 const banner = document.querySelector('.banner')
 //banner
+// ticTacToeBox selected queries
+const ticTacToeBox = document.querySelector('.ticTacToeBox')
+const div = document.querySelectorAll('.box>div>span')
+const xoH3 = document.querySelector('.ticTacToeBox>.row>h3')
+
+
+// ticTacToeBox selected queries
+
 
 //reset //
 banner.children[0].children[3].children[0].innerText="no game's being selected yet"
@@ -371,3 +379,69 @@ newWord.addEventListener('click',()=>{
        console.log(scrambledArray)
 })
 ///word scamble game ///////////////game******************************************************************************************************************************************
+
+
+///tic tac toe game ///////////////game******************************************************************************************************************************************
+
+navItem[3].addEventListener('click',()=>{
+       ticTacToeBox.style.display='flex'
+})
+
+
+
+
+let num1 = ''
+let num2 = ''
+let xoCard = rand(2)
+if(xoCard){
+       num1 = 'X'
+       num2 = 'O'
+}else{
+       num2 = 'X'
+       num1 = 'O'
+}
+let turnFlag = 1
+div.forEach((val)=>{
+       val.addEventListener('click',()=>{
+              let temp = val.getAttribute('data-status')
+                    xoH3.style.animationPlayState='paused'
+              if(temp == 'off'){
+
+                     if(turnFlag %2){
+                            val.innerText = num1
+                     }else{
+                            val.innerText = num2
+                     }
+                     turnFlag ++
+                     val.setAttribute('data-status','on')
+                     val.setAttribute('inert','inert')
+                     xoWinner()
+                     
+              }
+
+       })
+
+
+})
+
+let arr =[]
+function xoWinner(){
+   switch (true) {
+              case ((div[0].innerText==div[1].innerText)&&(div[0].innerText==div[2].innerText))&&(div[2].innerText!=''): arr=[0,1,2];break;
+              case ((div[3].innerText==div[4].innerText)&&(div[3].innerText==div[5].innerText))&&(div[5].innerText!=''): arr=[3,4,5];break;
+              case ((div[6].innerText==div[7].innerText)&&(div[6].innerText==div[8].innerText))&&(div[8].innerText!=''): arr=[6,7,8];break;
+              case ((div[0].innerText==div[3].innerText)&&(div[0].innerText==div[6].innerText))&&(div[6].innerText!=''): arr=[0,3,6];break;
+              case ((div[1].innerText==div[4].innerText)&&(div[1].innerText==div[7].innerText))&&(div[7].innerText!=''): arr=[1,4,7];break;
+              case ((div[2].innerText==div[5].innerText)&&(div[2].innerText==div[8].innerText))&&(div[8].innerText!=''): arr=[2,5,8];break;
+              case ((div[0].innerText==div[4].innerText)&&(div[0].innerText==div[8].innerText))&&(div[8].innerText!=''): arr=[0,4,8];break;
+              case ((div[2].innerText==div[4].innerText)&&(div[2].innerText==div[6].innerText))&&(div[6].innerText!=''): arr=[2,4,6];break;
+        }
+        arr.forEach((val)=>{
+                            div[val].style.backgroundColor='#7f77dd'
+                            if(div[val].innerText == 'X'){
+                                   xoH3.innerText ='X won the this match'
+                            }else{
+                                    xoH3.innerText ='O won the this match'
+                            }
+                     })
+}
