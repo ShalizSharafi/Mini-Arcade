@@ -79,8 +79,8 @@
        <!-- //arcade -->
        <div class="arcade w-full text-white">
               <!-- //number gusser game -->
-              <div class="numberGuesserBox gameBox gap-5" data-status="off">
-                      <h3 class="w-full flex items-center justify-center text-background font-bold capitalize sm:text-2xl  animate-bounce gap-2"> hit the play button, choose a number between 0 to 100 and .</h3>
+              <div class="numberGuesserBox gameBox gap-5 md:w-1/2! md:m-auto" data-status="off">
+                      <h3 class="h3Styles"> hit the play button, choose a number between 0 to 100 and .</h3>
       <input type="text" name="" id="inp" class="w-full px-2.5 sm:w-1/4 grow bg-nav-active-bg text-white py-2 rounded-[10px] outline-none border-none  ">
       <button class="buttonStyle play ">play</button>
       <button class="buttonStyle again">try again</button>
@@ -88,10 +88,10 @@
                <!-- //number gusser game -->
 
               <!-- rolling dice game  /////////////////////////////////////////// -->
-               <div class="diceRollerBox gameBox" data-status="off">
+               <div class="diceRollerBox gameBox md:w-1/2! md:m-auto" data-status="off">
                      
                      <div class="row justify-center items-center">
-                            <h3 class="w-full flex items-center justify-center text-background font-bold capitalize sm:text-2xl  animate-bounce gap-1.5 "> 
+                            <h3 class="h3Styles"> 
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1a1a2e" stroke-width="2"  class="size-6"><path d="M5 5L5 19H19V5H5ZM3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5ZM12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z"></path></svg>
                                    Roll the dice to play</h3>
                               <p class=" text-header-subtitle  mt-2.5 capitalize">first to 25 wins</p>
@@ -127,9 +127,9 @@
 
 
               <!-- word scramble game  /////////////////////////////////////////// -->
-               <div class="wordScrambleBox gameBox">
+               <div class="wordScrambleBox gameBox md:w-1/2! md:m-auto">
                      <div class="row justify-center items-center">
-                            <h3 class=" text-background font-bold  capitalize text-center  sm:text-2xl animate-bounce">what's your guess? type it out.</h3>
+                            <h3 class="h3Styles">what's your guess? type it out.</h3>
                      </div>
                      <div class="row lettersRow justify-center items-center gap-2.5">
                            <!-- letters come here -->
@@ -144,20 +144,35 @@
                </div>
 
                <!-- tic tak toe game -->
-                <div class="ticTacToeBox gameBox justify-center items-center ">
-                     <div class="row justify-center items-center">
-                            <h3 class=" text-background font-bold  capitalize text-center  sm:text-2xl animate-bounce">take turns, claim your squares, get three in a row</h3>
+                <div class="ticTacToeBox gameBox justify-center items-center relative md:w-1/2! md:m-auto ">
+                     <div class="row justify-center items-center gap-3">
+                            <h3 class="h3Styles">take turns, claim your squares, get three in a row</h3>
+                            <div class="row justify-center items-center gap-2.5 mb-2">
+                                   <span class="roundCount"></span>
+                                   <span class="roundCount"></span>
+                                   <span class="roundCount"></span>
+                            </div>
+                            <span class="w-full text-center text-nav-active-bg/40 text-[20px]"></span>
+                            <span class="w-fit flex items-center justify-center gap-1.5 text-md xoTurn bg-nav-active-bg/40 px-2.5 py-1 rounded-[10px] text-white"><span class="w-2 h-2 rounded-full bg-nav-active-bg  flex items-center justify-center"></span></span>
+                     </div>
+                     <div class="row gap-2.5 justify-center items-center">
+                            <span class="buttonStyle w-fit! cursor-none font-normal grow-0 px-5 text-background/75 text-[18px]" disabled>X wins:</span>
+                            <span class=" text-nav-active-bg/40 text-[20px]">vs</span>
+                            <span class="buttonStyle w-fit! cursor-none font-normal grow-0 px-5 text-background/75 text-[18px]" disabled>O wins:</span>
                      </div>
                      <div class="box *:cursor-pointer *:text-background *:font-bold *:text-2xl">
-                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class=" bg-player-one-chip-bg rounded-[10px] w-full h-full flex justify-center items-center"></span></div>
-                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class=" bg-player-one-chip-bg rounded-[10px] w-full h-full flex justify-center items-center"></span></div>
-                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class=" bg-player-one-chip-bg rounded-[10px] w-full h-full flex justify-center items-center"></span></div>
-                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class=" bg-player-one-chip-bg rounded-[10px] w-full h-full flex justify-center items-center"></span></div>
-                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class=" bg-player-one-chip-bg rounded-[10px] w-full h-full flex justify-center items-center"></span></div>
-                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class=" bg-player-one-chip-bg rounded-[10px] w-full h-full flex justify-center items-center"></span></div>
-                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class=" bg-player-one-chip-bg rounded-[10px] w-full h-full flex justify-center items-center"></span></div>
-                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class=" bg-player-one-chip-bg rounded-[10px] w-full h-full flex justify-center items-center"></span></div>
-                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class=" bg-player-one-chip-bg rounded-[10px] w-full h-full flex justify-center items-center"></span></div>
+                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class="xoSpot"></span></div>
+                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class="xoSpot"></span></div>
+                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class="xoSpot"></span></div>
+                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class="xoSpot"></span></div>
+                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class="xoSpot"></span></div>
+                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class="xoSpot"></span></div>
+                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class="xoSpot"></span></div>
+                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class="xoSpot"></span></div>
+                            <div class="w-1/3 h-1/3 p-1"><span data-status="off" class="xoSpot"></span></div>
+                     </div>
+                     <div class="overlayBox">
+
                      </div>
                </div>
        </div>
@@ -169,7 +184,7 @@
   <section class="w-full bg-background py-10 px-5 lg:px-10 ">
        <div class="row">
               <div class="cards *:border *:border-red">
-                     <div class="row gap-2.5 bg-white p-5 rounded-[10px]">
+                     <div class="row gap-2.5 bg-white p-5 rounded-[10px] duration-200 hover:translate-y-5 hover:shadow-[2px_2px_10px] hover:shadow-white/50">
                             <figure class="w-12.5 h-12.5 flex items-center justify-center  bg-nav-active-bg/50 rounded-[10px]">
                                    <img src="images/Number.png" alt="" class="w-1/2 h-1/2 object-cover">
                             </figure>
@@ -178,14 +193,14 @@
                      </div>
               </div>
               <div class="cards *:border *:border-red">
-                     <div class="row gap-2.5 bg-white p-5 rounded-[10px]">
+                     <div class="row gap-2.5 bg-white p-5 rounded-[10px] duration-200 hover:-translate-y-5 hover:shadow-[2px_2px_10px] hover:shadow-white/50">
                             <figure class="w-12.5 h-12.5 flex items-center justify-center  bg-nav-active-bg/50 rounded-[10px]"><img src="images/dice-line.png" alt="" class="w-1/2 h-1/2 object-cover"></figure>
                             <h3 class="w-full flex justify-start items-center text-xl font-bold text-background">Dice Roller</h3>
                             <h4 class="font-normal  text-background/75 w-full justify-start flex items-center">First to score 25 wins</h4>
                      </div>
               </div>
               <div class="cards *:border *:border-red">
-                     <div class="row gap-2.5 bg-white p-5 rounded-[10px]">
+                     <div class="row gap-2.5 bg-white p-5 rounded-[10px] duration-200 hover:translate-y-5 hover:shadow-[2px_2px_10px] hover:shadow-white/50">
                             <figure class="w-12.5 h-12.5 flex items-center justify-center  bg-nav-active-bg/50 rounded-[10px]">
                                    <img src="images/puzzle-line.png" alt="" class="w-1/2 h-1/2 object-cover">
                             </figure>
@@ -194,7 +209,7 @@
                      </div>
               </div>
               <div class="cards *:border *:border-red">
-                     <div class="row gap-2.5 bg-white p-5 rounded-[10px]">
+                     <div class="row gap-2.5 bg-white p-5 rounded-[10px] duration-200 hover:-translate-y-5 hover:shadow-[2px_2px_10px] hover:shadow-white/50">
                             <figure class="w-12.5 h-12.5 flex items-center justify-center  bg-nav-active-bg/50 rounded-[10px]">
                                    <img src="images/grid-fill.png" alt="" class="w-1/2 h-1/2 object-cover">
                             </figure>
@@ -204,12 +219,49 @@
               </div>
        </div>
   </section>
+  
     <!-- //card section -->
        <!-- //footer -->
-  <footer class="w-full bg-background py-10 px-5 lg:px-10 border-nav-border-inactive border-t">
+      <footer class="w-full bg-background border-t border-footer-divider px-5 lg:px-10 py-10 flex flex-wrap items-center justify-between gap-6">
+  
+  <!-- left side — avatar + info -->
+  <div class="flex items-center gap-4">
+    <div class="w-13 h-13 rounded-full bg-nav-active-bg flex items-center justify-center text-white font-medium text-lg shrink-0 border-2 border-nav-active-bg/40">
+      <img src="your-photo.jpg" alt="Shaliz Sharafi" class="w-full h-full object-cover rounded-full hidden">
+      <span>SS</span>
+    </div>
+    <div class="flex flex-col gap-1">
+      <p class="text-white font-medium text-sm">Shaliz Sharafi</p>
+      <p class="text-header-subtitle text-xs">front-end developer</p>
+      <span class="text-[11px] bg-nav-active-bg/20 text-nav-active-bg px-2.5 py-0.5 rounded-full w-fit">built with vanilla js</span>
+    </div>
+  </div>
 
-  </footer>
-    <!-- //footer -->
+  <!-- right side — socials + copyright -->
+  <div class="flex flex-col items-end gap-3">
+    <div class="flex items-center gap-2.5">
+      
+      <!-- GitHub -->
+      <a href="#" class="w-9 h-9 rounded-[10px] bg-white/5 border border-white/10 flex items-center justify-center hover:bg-nav-active-bg/20 hover:border-nav-active-bg duration-300">
+        <svg class="w-4 h-4 fill-header-subtitle hover:fill-nav-active-bg" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="#" class="w-9 h-9 rounded-[10px] bg-white/5 border border-white/10 flex items-center justify-center hover:bg-nav-active-bg/20 hover:border-nav-active-bg duration-300">
+        <svg class="w-4 h-4 fill-header-subtitle" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="#" class="w-9 h-9 rounded-[10px] bg-white/5 border border-white/10 flex items-center justify-center hover:bg-nav-active-bg/20 hover:border-nav-active-bg duration-300">
+        <svg class="w-4 h-4 fill-header-subtitle" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      </a>
+
+    </div>
+    <p class="text-footer-credit text-[11px]">© 2026 Shaliz Sharafi</p>
+  </div>
+
+</footer>
+<!-- footer/  ////////////////////-->
 </body>
 <script src="js/master.js"></script>
 </html>

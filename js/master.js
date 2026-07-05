@@ -30,8 +30,10 @@ const banner = document.querySelector('.banner')
 const ticTacToeBox = document.querySelector('.ticTacToeBox')
 const div = document.querySelectorAll('.box>div>span')
 const xoH3 = document.querySelector('.ticTacToeBox>.row>h3')
-
-
+const xoTurn = document.querySelector('.xoTurn')
+const box = document.querySelector('.box')
+const overlayBox = document.querySelector('.overlayBox')
+const roundCount = document.querySelectorAll('.roundCount')
 // ticTacToeBox selected queries
 
 
@@ -409,9 +411,26 @@ div.forEach((val)=>{
 
                      if(turnFlag %2){
                             val.innerText = num1
+                            xoTurn.innerText = num1 +"'s turn"
+                            if(num1 == 'X'){
+                                   val.style.color='#534ab7'
+                                   xoTurn.style.color='#534ab7'
+                            }else{
+                                   val.style.color='#993c1d'
+                                    xoTurn.style.color='#993c1d'
+                            }
                      }else{
                             val.innerText = num2
+                            xoTurn.innerText= num2 +"'s turn"
+                            if(num2 == 'O'){
+                                   val.style.color='#993c1d'
+                                   xoTurn.style.color='#993c1d'
+                            }else{
+                                   val.style.color='#534ab7'
+                                   xoTurn.style.color='#534ab7'
+                            }
                      }
+
                      turnFlag ++
                      val.setAttribute('data-status','on')
                      val.setAttribute('inert','inert')
@@ -425,6 +444,10 @@ div.forEach((val)=>{
 })
 
 let arr =[]
+let roundCounter = 0
+let xScore =0
+        let oScore =0
+        let roundWinner =''
 function xoWinner(){
    switch (true) {
               case ((div[0].innerText==div[1].innerText)&&(div[0].innerText==div[2].innerText))&&(div[2].innerText!=''): arr=[0,1,2];break;
@@ -436,12 +459,91 @@ function xoWinner(){
               case ((div[0].innerText==div[4].innerText)&&(div[0].innerText==div[8].innerText))&&(div[8].innerText!=''): arr=[0,4,8];break;
               case ((div[2].innerText==div[4].innerText)&&(div[2].innerText==div[6].innerText))&&(div[6].innerText!=''): arr=[2,4,6];break;
         }
-        arr.forEach((val)=>{
-                            div[val].style.backgroundColor='#7f77dd'
-                            if(div[val].innerText == 'X'){
-                                   xoH3.innerText ='X won the this match'
-                            }else{
-                                    xoH3.innerText ='O won the this match'
-                            }
-                     })
-}
+
+
+        
+       ///if win
+        if(arr.length == 3){
+                 console.log(roundCounter)
+              arr.forEach((val)=>{
+                     if(div[val].innerText == 'X'){
+                            div[val].classList.add('xWins')
+                            roundCount[roundCounter].classList.add('xWins')
+                            roundWinner = 'X'
+                            
+                            ticTacToeBox.children[0].children[2].innerText = (roundCounter+1) + ' /' + roundCount.length
+                     
+              
+                     }else{
+                            div[val].classList.add('oWins')
+                            roundCount[roundCounter].classList.add('oWins')
+                            roundWinner = 'O'
+                           
+                            ticTacToeBox.children[0].children[2].innerText = (roundCounter+1) + ' /' + roundCount.length
+
+                     }
+                  
+              })
+              roundCounter++
+
+              //scores
+              if(roundWinner == 'X'){
+                     xScore++
+                     ticTacToeBox.children[1].children[0].innerText ='X wins: '+ xScore
+              }else{
+                      oScore++
+                     ticTacToeBox.children[1].children[2].innerText ='O wins: '+ oScore
+              }
+              //scores
+
+              if(roundCounter == 3){
+                     setTimeout(()=>{
+                            overlayBox.style.scale='1'
+                     },500)
+                     return
+              }
+
+              box.setAttribute('inert','inert')
+              xoReset()
+        }else if(arr.length == 0 && turnFlag > 9){
+              ticTacToeBox.children[0].children[2].innerText = (roundCounter+1) + ' /' + roundCount.length
+              roundCount[roundCounter].style.backgroundColor='orange'
+              box.setAttribute('inert','inert')
+              roundCounter++
+              xoReset()
+              if(roundCounter == 3){
+                     setTimeout(()=>{
+                            overlayBox.style.scale='1'
+                     },500)
+                     return
+              }
+
+        }
+                     }
+
+
+/// xo reset function
+                     function xoReset(){
+                              setTimeout(() => {
+                    box.removeAttribute('inert')
+                    div.forEach((val)=>{
+                     val.removeAttribute('inert')
+                     arr =[]
+                     turnFlag =1
+                     val.style.backgroundColor =''
+                     val.setAttribute('data-status','off')
+                     if(val.innerText == 'X'){
+                            val.classList.remove('xWins')
+                            val.innerText = ''
+                     }else{
+                            val.classList.remove('oWins')
+                            val.innerText = ''
+
+                     }
+                    }) 
+              }, 500);
+                     }
+/// xo reset function              
+
+
+///tic tac toe game ///////////////game******************************************************************************************************************************************
