@@ -34,6 +34,9 @@ const xoTurn = document.querySelector('.xoTurn')
 const box = document.querySelector('.box')
 const overlayBox = document.querySelector('.overlayBox')
 const roundCount = document.querySelectorAll('.roundCount')
+const overlayCircles = document.querySelectorAll('.overlayCircles')
+const exit = document.querySelector('.exit')
+const newMatch = document.querySelector('.newMatch')
 // ticTacToeBox selected queries
 
 
@@ -469,6 +472,8 @@ function xoWinner(){
                      if(div[val].innerText == 'X'){
                             div[val].classList.add('xWins')
                             roundCount[roundCounter].classList.add('xWins')
+                            overlayCircles[roundCounter].classList.add('xWins')
+                            overlayCircles[roundCounter].innerText='X'
                             roundWinner = 'X'
                             
                             ticTacToeBox.children[0].children[2].innerText = (roundCounter+1) + ' /' + roundCount.length
@@ -477,8 +482,9 @@ function xoWinner(){
                      }else{
                             div[val].classList.add('oWins')
                             roundCount[roundCounter].classList.add('oWins')
+                            overlayCircles[roundCounter].classList.add('oWins')
+                            overlayCircles[roundCounter].innerText='O'
                             roundWinner = 'O'
-                           
                             ticTacToeBox.children[0].children[2].innerText = (roundCounter+1) + ' /' + roundCount.length
 
                      }
@@ -489,7 +495,7 @@ function xoWinner(){
               //scores
               if(roundWinner == 'X'){
                      xScore++
-                     ticTacToeBox.children[1].children[0].innerText ='X wins: '+ xScore
+                     ticTacToeBox.children[1].children[0].innerText ='X wins: '+ xScore       
               }else{
                       oScore++
                      ticTacToeBox.children[1].children[2].innerText ='O wins: '+ oScore
@@ -499,6 +505,7 @@ function xoWinner(){
               if(roundCounter == 3){
                      setTimeout(()=>{
                             overlayBox.style.scale='1'
+                            overlay()
                      },500)
                      return
               }
@@ -514,6 +521,7 @@ function xoWinner(){
               if(roundCounter == 3){
                      setTimeout(()=>{
                             overlayBox.style.scale='1'
+                            overlay()
                      },500)
                      return
               }
@@ -546,4 +554,55 @@ function xoWinner(){
 /// xo reset function              
 
 
+function overlay(){
+       if(xScore > oScore){
+              overlayBox.children[0].children[0].innerText ='X'
+              overlayBox.children[2].children[0].innerText = 'X wins this match'
+              overlayBox.children[0].children[0].style.color='#534ab7'
+       }else if(xScore < oScore){
+              overlayBox.children[0].children[0].innerText ='O'
+              overlayBox.children[2].children[0].innerText = 'O wins this match'
+              overlayBox.children[0].children[0].style.color='#993c1d'
+       }else{
+              overlayBox.children[0].children[0].innerText ='No Winner'
+       }
+     
+}
+
+  exit.addEventListener('click',()=>{
+              location.reload()
+       })
+
+       newMatch.addEventListener('click',()=>{
+              xoReset()
+              newMatchFunc()
+       })
+
+function newMatchFunc(){
+              overlayBox.style.scale='0'
+              roundCounter = 0 
+              xScore =0 
+              oScore = 0
+              ticTacToeBox.children[1].children[0].innerText ='X wins: '    
+              ticTacToeBox.children[1].children[2].innerText ='O wins: '  
+              roundCount.forEach((val)=>{
+                     val.classList.remove('xWins','oWins')
+                     val.style.backgroundColor =''
+              })   
+              overlayCircles.forEach((val)=>{
+                     val.style.backgroundColor=''
+                     if(val.innerText == 'X'){
+                            val.classList.remove('xWins')
+                     }else{
+                            val.classList.remove('oWins')
+                     }
+                     val.innerText = ''
+              })
+
+              overlayBox.children[0].children[0].innerText =''
+              overlayBox.children[1].children[0].innerText =''
+              xoTurn.style.color = ''
+              xoTurn.innerText = ''
+              ticTacToeBox.children[0].children[2].innerText = ''
+}
 ///tic tac toe game ///////////////game******************************************************************************************************************************************

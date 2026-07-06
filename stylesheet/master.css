@@ -32,6 +32,12 @@
        .h3Styles{
               @apply text-player-one-score font-bold  capitalize text-center text-[14px] sm:text-[18px] animate-bounce w-full flex items-center justify-center
        }
+
+       .defaultBox{
+              @apply w-full flex-wrap  p-8 bg-white 
+              rounded-[10px] flex duration-500  justify-center
+       }
+       
        .numberGuesserBox{
               @apply w-full flex-wrap  p-8 bg-white 
               rounded-[10px] hidden duration-500  justify-center
@@ -79,9 +85,12 @@
       }
 
       .cards{
-       @apply w-full sm:w-1/2 lg:w-1/4 p-2.5 flex flex-wrap  
+       @apply w-full sm:w-1/2 lg:w-1/4 p-2.5  
       }
 
+      .cardInterior{
+       @apply  bg-card-bg border-card-border hover:bg-card-bg-hover hover:border-card-border-hover duration-200 border rounded-[10px] gap-5 p-5
+      }
       .box{
        @apply w-67.5 h-67.5 sm:w-72 sm:h-72 sm:w-72 
         flex flex-wrap  
@@ -108,7 +117,7 @@
   }
 
   .overlayCircles{
-       @apply w-12.5 h-12.5 flex rounded-full items-center justify-center *:text-white *:text-lg border border-white
+       @apply w-12.5 h-12.5 flex rounded-full items-center justify-center *:text-white *:text-lg 
   }
 }
 
@@ -140,4 +149,39 @@
   --color-word-scramble-border: #0b6b58;
 
   --color-overlayBg: rgba(26, 26, 46, 0.92);
+
+
+/* //////////////////////////cards */
+   --color-card-bg: rgba(255, 255, 255, 0.04);
+  --color-card-bg-hover: rgba(255, 255, 255, 0.08);
+  --color-card-border: rgba(255, 255, 255, 0.08);
+  --color-card-border-hover: rgba(127, 119, 221, 0.4);
+
+  --color-card-icon-purple-bg: rgba(127, 119, 221, 0.15);
+  --color-card-icon-purple-border: rgba(127, 119, 221, 0.3);
+
+  --color-card-icon-coral-bg: rgba(153, 60, 29, 0.15);
+  --color-card-icon-coral-border: rgba(153, 60, 29, 0.3);
+
+  --color-card-icon-teal-bg: rgba(8, 80, 65, 0.3);
+  --color-card-icon-teal-border: rgba(8, 80, 65, 0.5);
+
+  --color-card-icon-amber-bg: rgba(180, 140, 30, 0.2);
+  --color-card-icon-amber-border: rgba(180, 140, 30, 0.3);
+
+  --color-card-tag-purple-bg: rgba(127, 119, 221, 0.15);
+  --color-card-tag-purple-text: #7f77dd;
+
+  --color-card-tag-coral-bg: rgba(153, 60, 29, 0.15);
+  --color-card-tag-coral-text: #c9825a;
+
+  --color-card-tag-teal-bg: rgba(8, 80, 65, 0.2);
+  --color-card-tag-teal-text: #4ecdb4;
+
+  --color-card-tag-amber-bg: rgba(180, 140, 30, 0.15);
+  --color-card-tag-amber-text: #c9a84c;
+
+  --color-card-stat-bg: rgba(255, 255, 255, 0.04);
+  --color-card-stat-border: rgba(255, 255, 255, 0.06);
+  --color-card-stat-text: #6e6e8e;
 }
