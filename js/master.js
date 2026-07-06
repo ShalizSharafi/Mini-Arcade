@@ -132,7 +132,7 @@ againBtn.addEventListener('click',()=>{
        randNum = rand(100)
        console.log(randNum)
        h3.innerText = 'fill in the blank with your guesses'
-       h3.style.color='#1a1a2e'
+       h3.style.classList.add('text-white/70')
        inp.value = ''
        inp.removeAttribute('inert')
        flag = 0
@@ -514,7 +514,7 @@ function xoWinner(){
               xoReset()
         }else if(arr.length == 0 && turnFlag > 9){
               ticTacToeBox.children[0].children[2].innerText = (roundCounter+1) + ' /' + roundCount.length
-              roundCount[roundCounter].style.backgroundColor='orange'
+              roundCount[roundCounter].style.backgroundColor='#c9825a'
               box.setAttribute('inert','inert')
               roundCounter++
               xoReset()

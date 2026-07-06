@@ -30,7 +30,7 @@
        }
 
        .h3Styles{
-              @apply text-player-one-score font-bold  capitalize text-center text-[14px] sm:text-[18px] animate-bounce w-full flex items-center justify-center
+              @apply text-white/70 font-bold  capitalize text-center text-[14px] sm:text-[18px] animate-bounce w-full flex items-center justify-center
        }
 
        .defaultBox{
@@ -49,7 +49,7 @@
        }
 
        .dice{
-              @apply  w-15 h-15 relative  transform-3d  duration-1000 
+              @apply  w-20 h-20 relative  transform-3d  duration-1000 
               
        }
 
@@ -71,7 +71,7 @@
               rounded-[10px] duration-500 hidden gap-5
        }
       .buttonStyle{
-       @apply w-full sm:w-1/3 grow p-2 text-player-one-label bg-player-one-chip-bg flex items-center justify-center rounded-[10px] text-xl font-bold border-none cursor-pointer hover:bg-nav-active-bg hover:text-white capitalize flex-wrap  duration-200 hover:scale-90
+       @apply w-full sm:w-1/3 grow p-2 text-player-one-label bg-white/70 flex items-center justify-center rounded-[10px] text-xl font-bold border-none cursor-pointer  hover:bg-card-tag-purple-bg hover:text-white capitalize flex-wrap  duration-200 hover:scale-90
       }
 
       #wordInp{
