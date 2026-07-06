@@ -57,10 +57,16 @@ navItem.forEach((val,i)=>{
                      val.setAttribute('data-status','on')
                      val.classList.add('itemBg')
                      banner.children[0].children[3].children[0].innerText=val.innerText
+                     
               }else{
                      val.setAttribute('data-status','off')
                      val.classList.remove('itemBg')
                      
+              }
+              if(i == 0){
+                     banner.children[0].children[3].children[0].innerText=''
+                     gameBox[0].style.display='flex'
+                     gameBox[0].setAttribute('data-status','on')
               }
        })
 })
@@ -78,7 +84,7 @@ function rand(i){
 
 ///number guesser game /////////////////////////******************************************************************************************************************************************
 //clicking on the menu items and displaying the game chosen//
-navItem[0].addEventListener('click',()=>{
+navItem[1].addEventListener('click',()=>{
               numberGuesserBox.style.display='flex'  
 })
 
@@ -150,7 +156,7 @@ againBtn.addEventListener('click',()=>{
 
 
 // ///////////clicking on the navitem to disaply the rolling dice box
-navItem[1].addEventListener('click',()=>{
+navItem[2].addEventListener('click',()=>{
               diceRollerBox.style.display='flex'
 })
 
@@ -300,7 +306,7 @@ holdButtons.forEach((val)=>{
 
 // //////////////////click on the navitem to display the word scramble box
 
-navItem[2].addEventListener('click',()=>{
+navItem[3].addEventListener('click',()=>{
        wordScrambleBox.style.display='flex'
 })
 
@@ -364,7 +370,7 @@ guess.addEventListener('click',()=>{
 
 newWord.addEventListener('click',()=>{
        h3Word.innerText = 'try to guess the new word'
-       h3Word.style.color ='#1a1a2e'
+       h3Word.classList.add('text-white/70')
        wordInp.value = ''
        randWord = words[rand(words.length)]
        guessCount = 0
@@ -388,7 +394,7 @@ newWord.addEventListener('click',()=>{
 
 ///tic tac toe game ///////////////game******************************************************************************************************************************************
 
-navItem[3].addEventListener('click',()=>{
+navItem[4].addEventListener('click',()=>{
        ticTacToeBox.style.display='flex'
 })
 

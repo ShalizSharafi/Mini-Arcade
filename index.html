@@ -12,7 +12,7 @@
               <p class=" text-header-subtitle  mt-2.5 ">Pick a game from the menu to play</p>
               <nav class="w-full mt-10 sm:mt-5 z-10">
                      <ul class="row justify-start lg:justify-start *:text-nav-active-text gap-5">
-                           
+                           <li class="all md:hidden navItem" data-status="off" >all games</li>
                             <li class="navItem" data-status="off"> 
                                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" stroke-width="2" stroke="#1a1a2e" class="size-5">
   <path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
@@ -80,7 +80,7 @@
   <section class="w-full bg-background py-5 px-7 lg:px-12 ">
        <!-- //arcade -->
        <div class="arcade w-full text-white">
-              <div class="gameBox defaultBox bg-card-bg border-card-border p-20!" data-status="on">
+              <div class="gameBox defaultBox bg-card-bg border-card-border p-20!" data-status="off">
                      <div class="row justify-center items-center gap-5">
                             <figure class="w-20 h-20 flex items-center justify-center">
                                    <img src="images/console.png" alt="" class="w-full h-full object-cover  drop-shadow-[2px_2px_10px] drop-shadow-white">
@@ -145,11 +145,11 @@
                            <!-- letters come here -->
                      </div>
                      <div class="row justify-center items-center">
-                            <input type="text" name="inp" id="wordInp" placeholder="type your guess here...">
+                            <input type="text" name="inp" id="wordInp" placeholder="type your guess here..." class="placeholder:font-normal placeholder:text-md placeholder:capitalize">
                      </div>
                      <div class="w-full flex flex-wrap md:flex-nowrap gap-2.5 justify-center items-center ">
-                          <button class="buttonStyle md:w-1/4 md:grow-0 guess">guess</button>
-                          <button class="buttonStyle md:w-1/4 md:grow-0 newWord">new word</button> 
+                          <button class="buttonStyle sm:w-1/3 guess">guess</button>
+                          <button class="buttonStyle sm:w-1/3 newWord">new word</button> 
                      </div>
                </div>
 
@@ -213,7 +213,7 @@
        <div class="row">
               <div class="cards">
                      <div class="cardInterior row">
-                            <div class="row justify-between items-center">
+                            <div class="row justify-between items-start">
                                    <span class="w-12.5 h-12.5 border rounded-[10px] border-card-icon-coral-border bg-card-tag-coral-bg flex items-center justify-center">
                                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#c9825a" class="size-8"><path d="M5.76282 17H20V5H4V18.3851L5.76282 17ZM6.45455 19L2 22.5V4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V18C22 18.5523 21.5523 19 21 19H6.45455ZM11 14H13V16H11V14ZM8.56731 8.81346C8.88637 7.20919 10.302 6 12 6C13.933 6 15.5 7.567 15.5 9.5C15.5 11.433 13.933 13 12 13H11V11H12C12.8284 11 13.5 10.3284 13.5 9.5C13.5 8.67157 12.8284 8 12 8C11.2723 8 10.6656 8.51823 10.5288 9.20577L8.56731 8.81346Z"></path></svg>
                                    </span>
@@ -232,7 +232,7 @@
               </div>
               <div class="cards">
                        <div class="cardInterior row">
-                            <div class="row justify-between items-center">
+                            <div class="row justify-between items-start">
                                    <span class="w-12.5 h-12.5 border rounded-[10px] border-card-icon-teal-border bg-card-tag-teal-bg flex items-center justify-center">
                                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#4ecdb4" class="size-8"><path d="M19 5V19H5L5 5H19ZM5 3C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3H5ZM16.5 15C16.5 15.8284 15.8284 16.5 15 16.5C14.1716 16.5 13.5 15.8284 13.5 15C13.5 14.1716 14.1716 13.5 15 13.5C15.8284 13.5 16.5 14.1716 16.5 15ZM9 10.5C9.82843 10.5 10.5 9.82843 10.5 9C10.5 8.17157 9.82843 7.5 9 7.5C8.17157 7.5 7.5 8.17157 7.5 9C7.5 9.82843 8.17157 10.5 9 10.5Z"></path></svg>
                                    </span>
@@ -251,7 +251,7 @@
               </div>
               <div class="cards">
                        <div class="cardInterior row">
-                            <div class="row justify-between items-center">
+                            <div class="row justify-between items-start">
                                    <span class="w-12.5 h-12.5 border rounded-[10px]  border-card-icon-amber-border bg-card-tag-amber-bg flex items-center justify-center">
                                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#c9a84c" class="size-8"><path d="M7 5C7 2.79086 8.79086 1 11 1C13.2091 1 15 2.79086 15 5H20C20.5523 5 21 5.44772 21 6V10.1707C21 10.4953 20.8424 10.7997 20.5774 10.9872C20.3123 11.1746 19.9728 11.2217 19.6668 11.1135C19.4595 11.0403 19.2355 11 19 11C17.8954 11 17 11.8954 17 13C17 14.1046 17.8954 15 19 15C19.2355 15 19.4595 14.9597 19.6668 14.8865C19.9728 14.7783 20.3123 14.8254 20.5774 15.0128C20.8424 15.2003 21 15.5047 21 15.8293V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V6C3 5.44772 3.44772 5 4 5H7ZM11 3C9.89543 3 9 3.89543 9 5C9 5.23554 9.0403 5.45952 9.11355 5.66675C9.22172 5.97282 9.17461 6.31235 8.98718 6.57739C8.79974 6.84243 8.49532 7 8.17071 7H5V19H19V17C16.7909 17 15 15.2091 15 13C15 10.7909 16.7909 9 19 9V7H13.8293C13.5047 7 13.2003 6.84243 13.0128 6.57739C12.8254 6.31235 12.7783 5.97282 12.8865 5.66675C12.9597 5.45952 13 5.23555 13 5C13 3.89543 12.1046 3 11 3Z"></path></svg>
                                    </span>
@@ -270,7 +270,7 @@
               </div>
               <div class="cards">
                        <div class="cardInterior row">
-                            <div class="row justify-between items-center">
+                            <div class="row justify-between items-start">
                                    <span class="w-12.5 h-12.5 border rounded-[10px] bg-card-tag-purple-bg  border-card-icon-purple-border flex items-center justify-center">
                                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#7f77dd" class="size-8"><path d="M14 10H10V14H14V10ZM16 10V14H19V10H16ZM14 19V16H10V19H14ZM16 19H19V16H16V19ZM14 5H10V8H14V5ZM16 5V8H19V5H16ZM8 10H5V14H8V10ZM8 19V16H5V19H8ZM8 5H5V8H8V5ZM4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3Z"></path></svg>
                                    </span>
