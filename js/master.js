@@ -32,10 +32,10 @@ const div = document.querySelectorAll('.box>div>span')
 const xoH3 = document.querySelector('.ticTacToeBox>.row>h3')
 const xoTurn = document.querySelector('.xoTurn')
 const box = document.querySelector('.box')
-const overlayBox = document.querySelector('.overlayBox')
+const overlayBox = document.querySelectorAll('.overlayBox')
 const roundCount = document.querySelectorAll('.roundCount')
 const overlayCircles = document.querySelectorAll('.overlayCircles')
-const exit = document.querySelector('.exit')
+const exit = document.querySelectorAll('.exit')
 const newMatch = document.querySelector('.newMatch')
 // ticTacToeBox selected queries
 
@@ -215,6 +215,8 @@ rollButtons.forEach((val)=>{
                                    rollButtons.forEach((val)=>{
                                           val.setAttribute('inert','inert')
                                    })
+                                   overlayBox[0].style.scale='1'
+                                   diceRollerBox.children[2].children[0].children[0].innerText='Player1 won!'
                             }
                      }, 1500);
               }else{
@@ -252,6 +254,8 @@ rollButtons.forEach((val)=>{
                                    rollButtons.forEach((val)=>{
                                           val.setAttribute('inert','inert')
                                    })
+                                   overlayBox[0].style.scale='1'
+                                   diceRollerBox.children[2].children[0].children[0].innerText='Player2 won!'
                             }
                     
                     
@@ -298,7 +302,37 @@ holdButtons.forEach((val)=>{
        })
 })
 
-
+  exit[0].addEventListener('click',()=>{
+              location.reload()
+       })
+// document.querySelector('.newDiceRollerMatch').addEventListener('click',()=>{
+//         overlayBox.style.scale='0'
+//         player1 =0 
+//         player2 =0
+//         turn = rand(2)
+//         player1Hold = 0
+//         player2Hold = 0
+//         if(turn){
+//        rollButtons[0].setAttribute('disabled','disabled')
+//        diceH3.innerText = 'Player2 may roll the dice'
+//         }else{
+//        rollButtons[1].setAttribute('disabled','disabled')
+//        diceH3.innerText = 'Player1 may roll the dice'
+//        diceH3.classList.add('text-white/70')
+//         }
+//        rollButtons.forEach((val)=>{
+//               val.removeAttribute('inert')
+//               val.children[1].innerText =''
+//        })
+//        if(turn){
+//        rollButtons[0].setAttribute('disabled','disabled')
+//        diceH3.innerText = 'Player2 may roll the dice'
+//       }else{
+//        rollButtons[1].setAttribute('disabled','disabled')
+//        diceH3.innerText = 'Player1 may roll the dice'
+//       }
+       
+// })
 
 ///dice roller game ///////////////game******************************************************************************************************************************************
 
@@ -510,7 +544,7 @@ function xoWinner(){
 
               if(roundCounter == 3){
                      setTimeout(()=>{
-                            overlayBox.style.scale='1'
+                            overlayBox[1].style.scale='1'
                             overlay()
                      },500)
                      return
@@ -526,7 +560,7 @@ function xoWinner(){
               xoReset()
               if(roundCounter == 3){
                      setTimeout(()=>{
-                            overlayBox.style.scale='1'
+                            overlayBox[1].style.scale='1'
                             overlay()
                      },500)
                      return
@@ -562,20 +596,20 @@ function xoWinner(){
 
 function overlay(){
        if(xScore > oScore){
-              overlayBox.children[0].children[0].innerText ='X'
-              overlayBox.children[2].children[0].innerText = 'X wins this match'
-              overlayBox.children[0].children[0].style.color='#534ab7'
+              overlayBox[1].children[0].children[0].innerText ='X'
+              overlayBox[1].children[2].children[0].innerText = 'X wins this match'
+              overlayBox[1].children[0].children[0].style.color='#534ab7'
        }else if(xScore < oScore){
-              overlayBox.children[0].children[0].innerText ='O'
-              overlayBox.children[2].children[0].innerText = 'O wins this match'
-              overlayBox.children[0].children[0].style.color='#993c1d'
+              overlayBox[1].children[0].children[0].innerText ='O'
+              overlayBox[1].children[2].children[0].innerText = 'O wins this match'
+              overlayBox[1].children[0].children[0].style.color='#993c1d'
        }else{
-              overlayBox.children[0].children[0].innerText ='No Winner'
+              overlayBox[1].children[0].children[0].innerText ='No Winner'
        }
      
 }
 
-  exit.addEventListener('click',()=>{
+  exit[1].addEventListener('click',()=>{
               location.reload()
        })
 
@@ -585,7 +619,7 @@ function overlay(){
        })
 
 function newMatchFunc(){
-              overlayBox.style.scale='0'
+              overlayBox[1].style.scale='0'
               roundCounter = 0 
               xScore =0 
               oScore = 0
@@ -605,8 +639,8 @@ function newMatchFunc(){
                      val.innerText = ''
               })
 
-              overlayBox.children[0].children[0].innerText =''
-              overlayBox.children[1].children[0].innerText =''
+              overlayBox[1].children[0].children[0].innerText =''
+              overlayBox[1].children[1].children[0].innerText =''
               xoTurn.style.color = ''
               xoTurn.innerText = ''
               ticTacToeBox.children[0].children[2].innerText = ''
