@@ -112,7 +112,7 @@ function numberGame(){
                             h3.innerText = 'the number is lesser than your guess, you have ' + (Math.abs(5-flag)) + ' guess left'
                      }else{
                             h3.innerText = 'You won the game within  ' + (flag+1) +' try(s)! congratulations!!'
-                            h3.style.color ='rgb(129,166,95)'
+                            h3.style.color ='rgb(129,166,95)'  
                             playBtn.style.backgroundColor ='#e8da9c'
                             playBtn.style.color ='#1a1a2e'
                             playBtn.innerText = 'You Won'
@@ -130,6 +130,7 @@ function numberGame(){
        }else{
               h3.innerText = 'fill in the blank with your guesses'
               inp.style.border='3px solid #993c1d'
+              h3.classList.add('text-white') 
        }
 }
 
@@ -138,7 +139,7 @@ againBtn.addEventListener('click',()=>{
        randNum = rand(100)
        console.log(randNum)
        h3.innerText = 'fill in the blank with your guesses'
-       h3.style.classList.add('text-white/70')
+       h3.style.color='white' 
        inp.value = ''
        inp.removeAttribute('inert')
        flag = 0
@@ -404,7 +405,7 @@ guess.addEventListener('click',()=>{
 
 newWord.addEventListener('click',()=>{
        h3Word.innerText = 'try to guess the new word'
-       h3Word.classList.add('text-white/70')
+       h3Word.style.color='white'
        wordInp.value = ''
        randWord = words[rand(words.length)]
        guessCount = 0
@@ -555,6 +556,7 @@ function xoWinner(){
         }else if(arr.length == 0 && turnFlag > 9){
               ticTacToeBox.children[0].children[2].innerText = (roundCounter+1) + ' /' + roundCount.length
               roundCount[roundCounter].style.backgroundColor='#c9825a'
+              overlayCircles[roundCounter].style.backgroundColor='#c9825a'
               box.setAttribute('inert','inert')
               roundCounter++
               xoReset()
@@ -605,6 +607,11 @@ function overlay(){
               overlayBox[1].children[0].children[0].style.color='#993c1d'
        }else{
               overlayBox[1].children[0].children[0].innerText ='No Winner'
+              overlayBox[1].children[2].children[0].innerText = 'none of the players won'
+              overlayBox[1].children[0].children[0].style.color='#c9825a'
+              overlayCircles.forEach((val)=>{
+                     val.style.backgroundColor='#c9825a'
+              })
        }
      
 }
