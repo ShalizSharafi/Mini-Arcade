@@ -97,7 +97,7 @@
 }
 
 .xoSpot{
-       @apply bg-player-one-chip-bg rounded-[10px] w-full h-full flex justify-center items-center
+       @apply bg-white/70 rounded-[10px] w-full h-full flex justify-center items-center hover:scale-95 
 }
 
 
